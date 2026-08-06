@@ -43,12 +43,13 @@ int main()
     int myarr[num];
 
     // passing input
-    
     for (int i = 0; i < num; i++)
     {
-        cout<<"Enter "<<i<< " element: ";
+        cout << "Enter " << i << " element: ";
         cin >> myarr[i];
     }
+
+    // printing the output
     for (int i = 0; i < num; i++)
     {
         cout << myarr[i] << " ";

@@ -49,6 +49,9 @@ int main()
         cout<<"Enter "<<i<< " element: ";
         cin >> myarr[i];
     }
+
+    // printing the output
+
     for (int i = 0; i < num; i++)
     {
         cout << myarr[i] << " ";

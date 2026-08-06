@@ -50,6 +50,7 @@ int main()
     }
 
     // printing the output
+
     for (int i = 0; i < num; i++)
     {
         cout << myarr[i] << " ";

@@ -16,6 +16,43 @@ void display(Myarray arr)
         cout << " " << arr.ptr[i];
     }
 }
+
+void append(Myarray *arr, int x)
+{
+    if (arr->length < arr->size)
+    {
+        arr->ptr[arr->length] = x;
+        arr->length++;
+    }
+}
+
+void insert(Myarray *arr, int index, int x)
+{
+    if (index >= 0 && index <= arr->length)
+    {
+        for (int i = arr->length; i > index; i--)
+        {
+            arr->ptr[i] = arr->ptr[i - 1];
+        }
+        arr->ptr[index] = x;
+        arr->length++;
+    }
+}
+
+int Delete(Myarray *arr, int index)
+{
+    int x = 0;
+    if (index >= 0 && index < arr->length)
+    {
+        x = arr->ptr[index];
+        for (int i = index; i < arr->length - 1; i++)
+        {
+            arr->ptr[i] = arr->ptr[i + 1];
+        }
+        arr->length--;
+    }
+    return x;
+}
 int main()
 {
     Myarray arr;
@@ -35,6 +72,9 @@ int main()
     }
     arr.length = num;
 
+    // append(&arr, 10);
+    // insert(&arr, 3, 15);
+    cout<<Delete(&arr,4)<<endl;
     display(arr);
     return 0;
 }

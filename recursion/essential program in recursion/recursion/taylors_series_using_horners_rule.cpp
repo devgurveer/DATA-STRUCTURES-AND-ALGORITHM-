@@ -1,40 +1,36 @@
 #include <iostream>
 using namespace std;
 
-
-// 1.recursive function
-
-double taylor(double x, double n)
+// recursive function for taylor series using horners rule.
+double hTaylor(double x, double n)
 {
-    static double s = 1;
-
+    static double result = 1;
     if (n == 0)
     {
-        return s;
+        return result;
     }
     else
     {
-        s = 1 + ((x / n) * s);
+        result = (1 + (x / n * result));
     }
-    return taylor(x, n - 1);
+    return hTaylor(x, n - 1);
 }
 
-// 2 iterative function
-
-double taylor1(double x, double n)
+// iterative version of taylor series using horners rule.
+double hITaylor(double x, double n)
 {
-    double s = 1;
+    double result = 1;
     for (; n > 0; n--)
     {
-        s = 1 + ((x / n) * s);
+        result = (1 + (x / n * result));
     }
-    return s;
+    return result;
 }
 int main()
 {
-    double num1 = taylor(1, 10);
-    // cout << num1;
-    double num2 = taylor1(1,10);
-    cout<<num2;
+    double myVal1 = hTaylor(1, 10);
+    cout << myVal1 << endl;
+    double myVal2 = hITaylor(1, 10);
+    cout << myVal2 << endl;
     return 0;
 }

@@ -1,41 +1,44 @@
 #include <iostream>
 using namespace std;
-// normal function
-int fact(int num)
+int fact(int n)
 {
-    if (num == 0)
+    if (n == 0)
     {
         return 1;
     }
     else
     {
-        return fact(num - 1) * num;
+        return fact(n - 1) * n;
     }
 }
-int combinationN(int n, int r)
+// combination formula
+int combN(int n, int x)
 {
     int temp1, temp2, temp3;
     temp1 = fact(n);
-    temp2 = fact(r);
-    temp3 = fact(n - r);
+    temp2 = fact(x);
+    temp3 = fact(n - x);
 
     return temp1 / (temp2 * temp3);
 }
-// recursive function
-int combinationR(int n, int r)
+// recursive function for Combination formula
+int combR(int n, int x)
 {
-    if (n == r || r == 0)
+    if (n == 0 || n == x)
     {
         return 1;
     }
     else
     {
-        return combinationR(n - 1, r - 1) + combinationR(n - 1, r);
+        return combR(n - 1, x - 1) + combR(n - 1, x);
     }
 }
 int main()
 {
-    int myComb = combinationR(4, 3);
-    cout << myComb;
+    int myVal1 = combN(5, 2);
+    cout << myVal1<<endl;
+    int myVal2 = combN(5, 2);
+    cout << myVal2;
+
     return 0;
 }

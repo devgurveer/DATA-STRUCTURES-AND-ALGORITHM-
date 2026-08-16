@@ -23,6 +23,6 @@ int iFact(int num)
 }
 int main()
 {
-    // cout << fact(5);
+    cout << fact(5)<<endl;
     cout << iFact(5);
 }

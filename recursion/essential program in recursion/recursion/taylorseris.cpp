@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-double taylor(int x, int n)
+
+double taylorSeries(double x, double n)
 {
     static double p = 1, f = 1;
     double result;
@@ -8,19 +9,17 @@ double taylor(int x, int n)
     {
         return 1;
     }
-
     else
     {
-        result = taylor(x, n - 1);
+        result = taylorSeries(x, n - 1);
         p = p * x;
         f = f * n;
-        return (result + p / f);
+        return (result + p/f);
     }
 }
-
 int main()
 {
-    double num = taylor(1,10);
-    cout << num;
+    double myNum = taylorSeries(2,10);
+    cout<<myNum;
     return 0;
 }

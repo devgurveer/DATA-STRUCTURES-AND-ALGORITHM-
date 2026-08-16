@@ -1,18 +1,19 @@
 #include <iostream>
 using namespace std;
-void TOH(int n, int A, int B, int C)
+// Tower of hanoi problem.
+void Toh(int n, int a, int b, int c)
 {
     if (n > 0)
     {
-        TOH(n - 1, A, C, B);
-        cout << "FROM: " << A
-             << " TO: " << C
-             << " USING: " << B <<endl;
-        TOH(n - 1, B, A, C);
+        Toh(n - 1, a, c, b);
+        cout << "FROM " << a
+             << " TO " << c
+             << " USING " << b << endl;
+        Toh(n - 1, b, a, c);
     }
 }
 int main()
 {
-    TOH(3,1,2,3);
+    Toh(3, 1, 2, 3);
     return 0;
 }

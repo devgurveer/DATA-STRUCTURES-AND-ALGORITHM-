@@ -30,9 +30,9 @@ int mypow1(int m, int n)
 }
 int main()
 {
-    // int mypow = pow(2,9);
-    // cout<<mypow;
-    // int pow1 =  mypow1(2,9);
-    // cout<<pow1;
+    int mypow = pow(2,9);
+    cout<<mypow;
+    int pow1 =  mypow1(2,9);
+    cout<<pow1;
     return 0;
 }
